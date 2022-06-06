@@ -1,16 +1,14 @@
-@extends('layouts.master')
+@extends('layouts.app')
 
 @section('content')
 
-    <div class="container">
-
-        <div class="row">
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
             <div class="card">
-                <div class="card-header">
-                    <h1 class="">Warga <span class="text-primary fw-bolder">Create</span></h1>
-                </div>
-                <div class="card-body py-3">
-                            
+                <div class="card-header">{{ __('Warga Create') }}</div>
+
+                <div class="card-body">
                     
                     <form action="/warga/store" method="POST">
                         @csrf
@@ -44,14 +42,12 @@
                         </div>
                                             
                     </form>
-                    
+
                 </div>
             </div>
         </div>
-
-        
-
     </div>
+</div>
     
 @endsection
     

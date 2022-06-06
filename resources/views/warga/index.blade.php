@@ -1,13 +1,15 @@
-@extends('layouts.master')
+@extends('layouts.app')
 
 @section('content')
 
-    <div class="container">
-
-        <div class="row">
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
             <div class="card">
+                <div class="card-header">{{ __('Warga') }}</div>
+
                 <div class="card-body">
-                            
+
                     <a href="/warga/create" class="btn btn-primary">Add Warga</a>
 
                     <div class="table-responsive">
@@ -34,12 +36,12 @@
                                     <td class="">{{ $w->jenis_kelamin }}</td>
                                     <td class="">{{ $w->alamat }}</td>
                                     <td class="">
-                                        <a href="/warga/{{ $w->id }}/edit" class="btn btn-primary">Edit</a>
+                                        <a href="/warga/{{ $w->id }}/edit" class="btn btn-sm btn-primary">Edit</a>
                 
                                         <form action="/warga/{{$w->id}}" method="POST">
                                             @csrf
                                             @method('delete')
-                                            <input type="submit" value="Delete" class="btn btn-danger">
+                                            <input type="submit" value="Delete" class="btn btn-sm btn-danger">
                                         </form>
                                         
                                     </td>
@@ -49,14 +51,12 @@
                             </tbody>
                         </table>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
-
-        
-
     </div>
+</div>
     
 @endsection
     
